@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface ExampleRepository extends JpaRepository<Example, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
-    Optional<Example> findById(Long id);
+    Optional<Example> findExampleById(Long id);
 }

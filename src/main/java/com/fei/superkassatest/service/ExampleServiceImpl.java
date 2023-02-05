@@ -19,7 +19,7 @@ public class ExampleServiceImpl implements ExampleService {
     @Transactional
     @Override
     public OutputDto post(InputDto inputDto) {
-        Example example = repository.findById(inputDto.getId()).orElseThrow();
+        Example example = repository.findExampleById(inputDto.getId()).orElseThrow();
         MyJson json = new MyJson(example.getObj().getCurrent() + inputDto.getAdd());
         example.setObj(json);
         return new OutputDto(json.getCurrent());
